@@ -1,0 +1,11 @@
+body {
+
+    background-image: url('../Images/pice-high-resolution-color-logo.png');
+    background-repeat: no-repeat;
+    background-size: 65%;
+}
+
+label{
+    font-size: 1.1rem;
+    color: #0dcaf0;
+}

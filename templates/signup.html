@@ -1,0 +1,93 @@
+{% load static %}
+{% load socialaccount %}
+
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Signup | PICE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Lobster&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+
+
+
+  </head>
+  <body>
+
+  <div class="container mt-2">
+
+    <div class="row">
+
+      <div class="col-md-4">
+
+      </div>
+      <div class="col-md-5">
+
+      </div>
+      <div class="col-md-3 mt-2">
+        <h3 class="mb-3 mt-1 text-center">Signup Page</h3>
+{% for message in messages %}
+<div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+  <strong></strong> {{message}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+
+<form action="/signup" method="post" autocomplete="off">{% csrf_token %}
+    <div class="mb-3 mt-0">
+      <label class="form-label"><b>Username</b></label>
+      <input type="user" class="form-control" name="username" aria-describedby="emailHelp" required>
+
+    </div>
+    <div class="mb-2 mt-0">
+        <label class="form-label"><b>Email address</b></label>
+      <input type="email" class="form-control" name="email" placeholder="name@example.com" required>
+      <div id="emailHelp" class="form-text fs-7">(We'll never share your email with anyone else.)</div>
+    </div>
+    <div class="mb-2 ">
+
+        <label class="form-label" ><b>Password</b></label>
+<!--      <input type="password" name="pass1" class="form-control" aria-describedby="passwordHelpBlock" required>-->
+      <div class="input-group">
+        <span class="input-group-text" id="basic-addon1">
+                  <svg width="16" height="16" fill="" class="bi bi-eye-slash" viewBox="0 0 16 16">
+                    <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7.028 7.028 0 0 0-2.79.588l.77.771A5.944 5.944 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.134 13.134 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486l.708.709z"/>
+                    <path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829l.822.822zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829z"/>
+                    <path d="M3.35 5.47c-.18.16-.353.322-.518.487A13.134 13.134 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7.029 7.029 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12-.708.708z"/>
+                  </svg>
+          </span>
+                <input type="password" name="pass1" class="form-control" aria-label="Input group example" aria-describedby="passwordHelpBlock">
+        </div>
+    </div>
+      <div id="passwordHelpBlock" class="form-text fs-7">
+        (Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.)
+      </div>
+
+    <div class="mb-2 mt-2">
+        <label class="form-label"><b>Confirm Password</b></label>
+      <input type="password" name="pass2" class="form-control" aria-describedby="passwordHelpBlock" required>
+    </div>
+
+  <div class="d-grid gap-2 mt-3">
+    <button type="submit" class="btn btn-info">SignIn</button>
+  </div>
+
+</form>
+<div class="justify-content-between mt-1 d-flex small gap-2">
+    <p class="justify-content-between mt-2 d-flex medium gap-1"><br>Already User?<br><a href="/login" class="text-info text-decoration-none"><br> Login!</a></p>
+<a class="btn btn-info mt-3 mb-2" id="" href="{% provider_login_url 'google' %}" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" ">Login with <img src="https://img.icons8.com/color/30/000000/google-logo.png" ></a>
+
+</div>
+
+      </div>
+
+  </div>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+
+    </script>
+  </body>
+</html>

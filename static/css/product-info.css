@@ -1,0 +1,31 @@
+#pro-info-section{
+background-image: linear-gradient(to bottom right, #262626, #26C6DA);
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
+}
+
+#pro-info-table{
+    background: linear-gradient(109.6deg, rgba(0, 0, 0, 0.93) 11.2%, rgb(63, 61, 61) 78.9%);
+}
+
+.table-head{
+    color: #fff;
+	font-size: 20px;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 1px;
+
+}
+
+.table-head:focus , .table-head:hover{
+    color: #26C6DA;
+}
+
+.table-body{
+    color: #fff;
+    font-size: 17px;
+    letter-spacing: .5px;
+}
+
+.table-body:focus , .table-body:hover{
+    color: #26C6DA;
+}

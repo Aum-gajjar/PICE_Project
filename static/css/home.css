@@ -1,0 +1,33 @@
+#supporting-channels {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#supporting-channels h2 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+#supporting-channels img {
+  max-height: 90px;
+  margin-bottom: 20px;
+}
+
+#supporting-channels h4 {
+  font-size: 24px;
+}
+
+.card {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.about {
+  background-color: white;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
+  padding: 20px;
+}
+
+#supporting-channels{
+    box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.75);
+}
+

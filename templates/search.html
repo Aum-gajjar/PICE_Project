@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}Product Search{% endblock title%}
+
+{% block searchactive %}active{% endblock searchactive %}
+
+{% block head %}
+{% load static %}
+
+{% endblock head %}
+
+{% block body %}
+    <div class="search-head mt-3" id="searching-head">
+        <div class="search-container">
+            <h1 class="fs-1">Product</h1>
+            <h2 class="fs-1" id="typing-text">Search...</h2>
+        </div>
+    </div>
+    <section id="choose-channel" class="">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+                    <div class="card">
+                        <div class="card-body bg-light bg-gradient rounded-3" id="search-card">
+
+                            <form method="POST" action="/search" autocomplete="off">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label for="channel-select" class="form-label text-primary fw-bold fs-3">Select the Channel:</label>
+                                    <select class="form-select ms-2" id="channel-select" name="channel" required>
+                                        <option value="" disabled selected>Choose channels from here</option>
+                                        <option value="Amazon">Amazon</option>
+                                        <option value="Snapdeal">Snapdeal</option>
+                                        <option value="Zoro">Zoro</option>
+                                        <option value="Grainger">Grainger</option>
+                                        <option value="HDSupply">HD Supply</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="gtin-asin" class="form-label mb-0 mt-3 text-primary fw-bold fs-3">Enter GTIN/ASIN:</label>
+                                    <div class="form-text fs-6" id="search-text-extra">(Product number)</div>
+                                    <input type="text" class="form-control ms-2" id="gtin-asin" name="gtin_asin" required>
+
+                                    <br>
+                                    {% if messages %}
+                                        {% for message in messages %}
+                                            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                                                <strong>Please enter a valid GTIN/ASIN</strong> {{ message }}
+                                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                            </div>
+                                        {% endfor %}
+                                    {% endif %}
+                                </div>
+
+<!--                                <div class="form-group">-->
+<!--                                    <label for="search-text" class="form-label mb-0 fs-3">Enter search text:</label>-->
+<!--                                    <input type="text" class="form-control mb-3 ms-2" id="search-text" name="search_text">-->
+<!--                                </div>-->
+
+                                <button type="submit" class="btn btn-primary bg-gradient mt-1">Search</button>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock body %}

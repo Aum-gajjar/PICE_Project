@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %}Product Info{% endblock title%}
+{% load static %}
+
+{% block body %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+    <strong>Your Results</strong> {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+{% endif %}
+
+<!--{% if gtin_asin_list and channel %}-->
+<!--{% for gtin_asin in gtin_asin_list %}-->
+<!--<h2>Results for {{ gtin_asin }} on {{ channel }}</h2>-->
+<!--{% endfor %}-->
+<!--{% endif %}-->
+<section class="text-center text-light mt-3 mb-3" id="pro-info-section">
+    <br>
+    <h1 class="">Product Information</h1>
+    <br>
+</section>
+    <table class="table table-bordered text-center border-dark" id="pro-info-table">
+
+        <tr>
+            <th class="table-head">ASIN/GTIN</th>
+            <th class="table-head">Product Title</th>
+            <th class="table-head">Price</th>
+            <th class="table-head">Rating</th>
+            <th class="table-head">Stock</th>
+        </tr>
+
+        {% for product in products %}
+            <tr class="mt-3">
+                <td class="table-body">{{ product.asingtin }}</td>
+                <td class="table-body">{{ product.title }}</td>
+                <td class="table-body">{{ product.price }}</td>
+                <td class="table-body">{{ product.rating }}</td>
+                <td class="table-body">{{ product.stock }}</td>
+            </tr>
+        {% empty %}
+            <tr class="mt-3">
+                <td colspan="5" class="table-body">No products found</td>
+            </tr>
+        {% endfor %}
+
+    </table>
+
+{% endblock body %}
+

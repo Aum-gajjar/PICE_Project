@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title%}
+{% block homeactive %}active{% endblock homeactive %}
+{% block head %}
+{% load static %}
+
+{% endblock head %}
+{% block body %}
+{% for message in messages %}
+<div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+  <strong>Welcome</strong> {{message}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner" >
+    <div class="carousel-item active" data-bs-interval="3000">
+      <img src="{% static 'Images/webcrawler2.2.jpg' %}" class="d-block w-100" alt="..." style="width:640px;height:360px">
+    </div>
+    <div class="carousel-item" data-bs-interval="3000">
+      <img src="{% static 'Images/scan_asin1.jpg' %}" class="d-block w-100" alt="..." style="width:640px;height:360px">
+    </div>
+    <div class="carousel-item" data-bs-interval="3000">
+      <img src="{% static 'Images/bg.jpg' %}" class="d-block w-100" alt="..." style="width:640px;height:360px">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!--<Overview section>-->
+<section id="overview" class="text-center">
+  <h1 class="mt-5">Easy <span class="text-info">Web Scraping</span> for Anyone!</h1>
+  <p class="fs-4 mt-4">Quickly get web data without coding<br><span class="text-info">Obtain the information from desired Websites within clicks...</span></p>
+</section>
+
+<!--<About section>-->
+<section class="about section-padding mt-5 mb-5 bg-info" id="about">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-5 col-md-12 col-12">
+					<div class="about-img"><img alt="" class="img-fluid" src="{% static 'Images/pice-high-resolution-color-logo_Icon.png' %}"></div>
+			</div>
+			<div class="col-lg-7 col-md-12 col-12 ps-lg-5 mt-5 mb-3">
+				<div class="about-text">
+					<h2>What PICE can do</h2>
+                    <p class="fs-5">PICE stands for Product Information Crawler Engine, which is a type of software application that is designed to automatically collect data and information from various sources about products, such as their prices, features, reviews, ratings and availability. This type of engine uses web crawling and scraping techniques to access information from different online sources such as e-commerce sites, manufacturer websites, and social media platforms. Furthermore, this application can provide product details based on GTIN (Global Trade Item Number) or ASIN (Amazon Standard Identification Number), which is entered by the user.</p>
+					{% if not request.user.is_authenticated %}
+					<a class="btn btn-dark" href="/login">Try it!</a>
+					{% else %}
+					<a class="btn btn-dark" href="/search">Try it!</a>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!--<Steps section>-->
+<section class="services section-padding mb-5" id="steps">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="section-header text-center pb-5">
+						<h2>Extract Product Info<br>in few steps</h2>
+						<p class="text-info fs-4">Follow the steps given below!</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12 col-md-12 col-lg-4">
+					<div class="card text-white text-center bg-dark pb-2 bg-gradient" >
+						<div class="card-body" id="home-card1">
+							<i class="bi bi-1-square fs-4"></i>
+							<h3 class="card-title">Select Channel</h3>
+							<p class="lead">Select any of the channel among the available channels from the dropdown!</p>
+							{% if not request.user.is_authenticated %}
+							<a class="btn btn-info" href="/login">Try it!</a>
+							{% else %}
+							<a class="btn btn-info" href="/search">Try it!</a>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-12 col-lg-4">
+					<div class="card text-white text-center bg-dark pb-2 bg-gradient">
+						<div class="card-body" id="home-card2">
+							<i class="bi bi-2-square fs-4"></i>
+							<h3 class="card-title">Enter the Number</h3>
+							<p class="lead">After selecting the channel, enter the product numbers of that channel selected and you are one step away!</p>
+							{% if not request.user.is_authenticated %}
+							<a class="btn btn-info" href="/login">Try it!</a>
+							{% else %}
+							<a class="btn btn-info" href="/search">Try it!</a>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-12 col-lg-4">
+					<div class="card text-white text-center bg-dark pb-2 bg-gradient">
+						<div class="card-body" id="home-card3">
+							<i class="bi bi-3-square fs-4"></i>
+							<h3 class="card-title">Get the Info</h3>
+							<p class="lead">And that's it, Hit the search button and get all the info of the products you searched for!</p>
+							{% if not request.user.is_authenticated %}
+							<a class="btn btn-info" href="/login">Try it!</a>
+							{% else %}
+							<a class="btn btn-info" href="/search">Try it!</a>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</section>
+
+<!--<Channels section>-->
+
+<section id="supporting-channels" class="section-padding bg-info bg-gradient text-center mb-4">
+  <div class="container">
+    <h2 class="mb-5 text-dark">Our Supporting Channels</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-2 col-sm-6 mx-3">
+        <img src="{% static 'Images/Amazon_logo.png' %}" alt="Channel 1" class="img-fluid">
+        <h5 class="text-dark">Amazon</h5>
+      </div>
+      <div class="col-md-2 col-sm-6 mx-3">
+        <img src="{% static 'Images/Snapdeal_logo.png' %}" alt="Channel 2" class="img-fluid">
+        <h5 class="mt-2 text-dark">Snapdeal</h5>
+      </div>
+      <div class="col-md-2 col-sm-6 mx-3">
+        <img src="{% static 'Images/grainger-logo.png' %}" alt="Channel 3" class="img-fluid" >
+        <h5 class="mt-2 text-dark">Grainger</h5>
+	  </div>
+	</div>
+	<div class="row justify-content-center mt-5">
+		<div class="col-md-2 col-sm-6 mx-3">
+        <img src="{% static 'Images/zoro-logo.png' %}" alt="Channel 3" class="img-fluid" >
+        <h5 class="text-dark">Zoro</h5>
+      </div>
+		<div class="col-md-2 col-sm-6 mt-4 mx-3">
+        <img src="{% static 'Images/hdsupply-logo.png' %}" alt="Channel 3" class="img-fluid" >
+        <h5 class="mt-2 text-dark">HD-Supply</h5>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--<Features section>-->
+<section>
+	<br>
+</section>
+
+{% endblock body %}

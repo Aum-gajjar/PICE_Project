@@ -1,0 +1,119 @@
+/* CSS code for product search page */
+#choose-channel {
+        background-color: #26C6DA;
+    background-image: linear-gradient(to bottom right, #262626, #26C6DA);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 30px;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-bottom: 50px;
+    margin-top: 40px;
+}
+
+.card-body #search-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+}
+
+
+#choose-channel label {
+
+     padding: 5px;
+
+}
+
+#search-text-extra{
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+#choose-channel select,
+#choose-channel input {
+    border: 1px solid #ced4da;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 6px 12px;
+    width: 55%;
+}
+
+#choose-channel a {
+    margin-top: 5px;
+    background-color: #0069d9;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+}
+
+#choose-channel a:hover {
+    background-color: #26C6DA;
+}
+
+#searching-head{
+  height: 10vh;
+  background-image: linear-gradient(to bottom right, #262626, #26C6DA);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-container h1 {
+  font-size: 4rem;
+  color: #fff;
+  margin-right: 20px;
+}
+
+.search-container h2 {
+  font-size: 3rem;
+  color: #000;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.search-container h2::after {
+  content: '|';
+  position: absolute;
+  right: -10px;
+  animation: blink 1s steps(1, end) infinite;
+}
+
+.search-container h2:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -10px;
+  width: 10px;
+  height: 100%;
+  background-color: #000;
+  animation: blink 1s steps(1, end) infinite;
+}
+#typing-text {
+    font-size: 3.5rem;
+    color: #fff;
+    animation: typing 3s ease-out infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #000;
+  }
+}
