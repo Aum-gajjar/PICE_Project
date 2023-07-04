@@ -1,1 +1,4 @@
 # PICE_Project
+A Product Information Crawler Engine(PICE) is a type of software application that is designed to automatically collect data and information from various sources about products, such as their prices, features, and reviews. 
+This type of engine uses web crawling and scraping techniques to access information from different online sources such as e-commerce sites, manufacturer websites, and social media platforms. Furthermore, this application can provide product details based on GTIN (Global Trade Item Number) or ASIN (Amazon Standard Identification Number), which is entered by the user.
+The collected product information can be used for various purposes such as market research, price comparison, product reviews, and competitive analysis. E-commerce companies can also use this data to optimize their pricing strategies, improve product descriptions, and monitor their competitors' offerings.
